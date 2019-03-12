@@ -28,42 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartMain = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.buttonGenerate = new System.Windows.Forms.Button();
             this.groupBoxEnterValues = new System.Windows.Forms.GroupBox();
-            this.textBoxResolutionPattern = new System.Windows.Forms.TextBox();
-            this.labelResolutionPattern = new System.Windows.Forms.Label();
-            this.labelLengthSignal = new System.Windows.Forms.Label();
-            this.textBoxLengthSignal = new System.Windows.Forms.TextBox();
-            this.comboBoxSignalType = new System.Windows.Forms.ComboBox();
             this.labelSignalType = new System.Windows.Forms.Label();
+            this.comboBoxSignalType = new System.Windows.Forms.ComboBox();
+            this.textBoxLengthSignal = new System.Windows.Forms.TextBox();
+            this.labelLengthSignal = new System.Windows.Forms.Label();
+            this.labelResolutionPattern = new System.Windows.Forms.Label();
+            this.textBoxResolutionPattern = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.chartMain)).BeginInit();
             this.groupBoxEnterValues.SuspendLayout();
             this.SuspendLayout();
             // 
             // chartMain
             // 
+            this.chartMain.BackColor = System.Drawing.Color.DarkGray;
+            this.chartMain.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalRight;
+            this.chartMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.chartMain.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.DarkDownwardDiagonal;
+            this.chartMain.BackImageTransparentColor = System.Drawing.Color.White;
+            this.chartMain.BackSecondaryColor = System.Drawing.Color.White;
+            this.chartMain.BorderlineColor = System.Drawing.Color.Transparent;
+            this.chartMain.BorderSkin.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center;
+            this.chartMain.BorderSkin.BackSecondaryColor = System.Drawing.Color.Lime;
             this.chartMain.BorderSkin.PageColor = System.Drawing.Color.LightSeaGreen;
-            chartArea3.Name = "ChartArea1";
-            this.chartMain.ChartAreas.Add(chartArea3);
-            this.chartMain.Cursor = System.Windows.Forms.Cursors.Default;
-            legend3.Name = "Legend1";
-            this.chartMain.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chartMain.ChartAreas.Add(chartArea1);
+            this.chartMain.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.chartMain.ImeMode = System.Windows.Forms.ImeMode.On;
+            legend1.Name = "Legend1";
+            this.chartMain.Legends.Add(legend1);
             this.chartMain.Location = new System.Drawing.Point(12, 12);
             this.chartMain.Name = "chartMain";
-            this.chartMain.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
-            this.chartMain.PaletteCustomColors = new System.Drawing.Color[] {
-        System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))))};
-            series3.BorderColor = System.Drawing.Color.Blue;
-            series3.BorderWidth = 2;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Legend = "Legend1";
-            series3.Name = "Punkty";
-            this.chartMain.Series.Add(series3);
+            this.chartMain.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.chartMain.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            series1.BorderColor = System.Drawing.Color.Blue;
+            series1.BorderWidth = 2;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Punkty";
+            this.chartMain.Series.Add(series1);
             this.chartMain.Size = new System.Drawing.Size(534, 368);
             this.chartMain.TabIndex = 0;
             this.chartMain.Text = "chartMain";
@@ -93,37 +102,14 @@
             this.groupBoxEnterValues.TabStop = false;
             this.groupBoxEnterValues.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // textBoxResolutionPattern
+            // labelSignalType
             // 
-            this.textBoxResolutionPattern.Location = new System.Drawing.Point(6, 30);
-            this.textBoxResolutionPattern.Name = "textBoxResolutionPattern";
-            this.textBoxResolutionPattern.Size = new System.Drawing.Size(100, 20);
-            this.textBoxResolutionPattern.TabIndex = 0;
-            // 
-            // labelResolutionPattern
-            // 
-            this.labelResolutionPattern.AutoSize = true;
-            this.labelResolutionPattern.Location = new System.Drawing.Point(6, 14);
-            this.labelResolutionPattern.Name = "labelResolutionPattern";
-            this.labelResolutionPattern.Size = new System.Drawing.Size(178, 13);
-            this.labelResolutionPattern.TabIndex = 1;
-            this.labelResolutionPattern.Text = "Rozdzielczość wzorca (ilosc próbek)";
-            // 
-            // labelLengthSignal
-            // 
-            this.labelLengthSignal.AutoSize = true;
-            this.labelLengthSignal.Location = new System.Drawing.Point(6, 53);
-            this.labelLengthSignal.Name = "labelLengthSignal";
-            this.labelLengthSignal.Size = new System.Drawing.Size(166, 13);
-            this.labelLengthSignal.TabIndex = 2;
-            this.labelLengthSignal.Text = "Długośc sygnalu (liczba okresów)";
-            // 
-            // textBoxLengthSignal
-            // 
-            this.textBoxLengthSignal.Location = new System.Drawing.Point(6, 69);
-            this.textBoxLengthSignal.Name = "textBoxLengthSignal";
-            this.textBoxLengthSignal.Size = new System.Drawing.Size(100, 20);
-            this.textBoxLengthSignal.TabIndex = 3;
+            this.labelSignalType.AutoSize = true;
+            this.labelSignalType.Location = new System.Drawing.Point(6, 92);
+            this.labelSignalType.Name = "labelSignalType";
+            this.labelSignalType.Size = new System.Drawing.Size(81, 13);
+            this.labelSignalType.TabIndex = 5;
+            this.labelSignalType.Text = "Rodzaj Sygnalu";
             // 
             // comboBoxSignalType
             // 
@@ -140,14 +126,37 @@
             this.comboBoxSignalType.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSignalType.TabIndex = 4;
             // 
-            // labelSignalType
+            // textBoxLengthSignal
             // 
-            this.labelSignalType.AutoSize = true;
-            this.labelSignalType.Location = new System.Drawing.Point(6, 92);
-            this.labelSignalType.Name = "labelSignalType";
-            this.labelSignalType.Size = new System.Drawing.Size(81, 13);
-            this.labelSignalType.TabIndex = 5;
-            this.labelSignalType.Text = "Rodzaj Sygnalu";
+            this.textBoxLengthSignal.Location = new System.Drawing.Point(6, 69);
+            this.textBoxLengthSignal.Name = "textBoxLengthSignal";
+            this.textBoxLengthSignal.Size = new System.Drawing.Size(100, 20);
+            this.textBoxLengthSignal.TabIndex = 3;
+            // 
+            // labelLengthSignal
+            // 
+            this.labelLengthSignal.AutoSize = true;
+            this.labelLengthSignal.Location = new System.Drawing.Point(6, 53);
+            this.labelLengthSignal.Name = "labelLengthSignal";
+            this.labelLengthSignal.Size = new System.Drawing.Size(166, 13);
+            this.labelLengthSignal.TabIndex = 2;
+            this.labelLengthSignal.Text = "Długośc sygnalu (liczba okresów)";
+            // 
+            // labelResolutionPattern
+            // 
+            this.labelResolutionPattern.AutoSize = true;
+            this.labelResolutionPattern.Location = new System.Drawing.Point(6, 14);
+            this.labelResolutionPattern.Name = "labelResolutionPattern";
+            this.labelResolutionPattern.Size = new System.Drawing.Size(178, 13);
+            this.labelResolutionPattern.TabIndex = 1;
+            this.labelResolutionPattern.Text = "Rozdzielczość wzorca (ilosc próbek)";
+            // 
+            // textBoxResolutionPattern
+            // 
+            this.textBoxResolutionPattern.Location = new System.Drawing.Point(6, 30);
+            this.textBoxResolutionPattern.Name = "textBoxResolutionPattern";
+            this.textBoxResolutionPattern.Size = new System.Drawing.Size(100, 20);
+            this.textBoxResolutionPattern.TabIndex = 0;
             // 
             // Form1
             // 

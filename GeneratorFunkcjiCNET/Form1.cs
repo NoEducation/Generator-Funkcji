@@ -17,6 +17,8 @@ namespace GeneratorFunkcjiCNET
         public Form1()
         {
             InitializeComponent();
+
+
             comboBoxSignalType.SelectedIndex = 0;
             textBoxLengthSignal.Text = "1";
             textBoxResolutionPattern.Text = "8192";
@@ -29,7 +31,7 @@ namespace GeneratorFunkcjiCNET
         public void UpdateChart()
         {
             chartMain.Series["Punkty"].Points.Clear();
-
+         
             foreach(var point in currentSignal.SignalValues)
             {
                 chartMain.Series["Punkty"].Points.AddY(point);

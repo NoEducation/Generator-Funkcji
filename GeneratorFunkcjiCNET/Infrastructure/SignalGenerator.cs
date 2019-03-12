@@ -70,7 +70,7 @@ namespace GeneratorFunkcjiCNET.Infrastructure
         public static void GeneratingSignalSawtooth(this Signal target)
         {
             target.SignalValues = (double[])Array.CreateInstance(typeof(double), target.ResolutionPattern);
-            double lengthSection = target.ResolutionPattern / (target.LenghtSignal * 4);
+            double lengthSection = target.ResolutionPattern / (target.LenghtSignal * 2);
             double lengthBetweenSamples = 1 / lengthSection;
             double value = 0;
 
