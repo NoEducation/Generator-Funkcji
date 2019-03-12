@@ -41,7 +41,7 @@ namespace GeneratorFunkcjiCNET.Infrastructure
         public static void GeneratingSignalTriangle(this Signal target)
         {
             target.SignalValues = (double[])Array.CreateInstance(typeof(double), target.ResolutionPattern);
-            double lengthSection = target.ResolutionPattern / (target.LenghtSignal * 4);
+            double lengthSection = target.ResolutionPattern / (target.LenghtSignal * 4); 
             double lengthBetweenSamples = 1 / lengthSection;
             double value = 0;
             bool increase = true;
@@ -53,11 +53,11 @@ namespace GeneratorFunkcjiCNET.Infrastructure
                 if(j >= lengthSection)
                 {
                     j = 0;
-                    if (value >= 1)
-                        increase = false;
-                    else if (value <= -1)
-                        increase = true;
                 }
+                if (value >= 1)
+                    increase = false;
+                else if (value <= -1)
+                    increase = true;
                 if (increase)
                     value += lengthBetweenSamples;
 
@@ -85,6 +85,13 @@ namespace GeneratorFunkcjiCNET.Infrastructure
                 target.SignalValues[i] = value;
             }
         }
-
+        public static void GeneratingSignalTangent(this Signal target)
+        {
+            target.SignalValues = (double[])Array.CreateInstance(typeof(double), target.ResolutionPattern);
+            for (int i = 0; i < target.ResolutionPattern; i++)
+            {
+                target.SignalValues[i] = Math.Tan(target._kwant * i);
+            }
+        }
     }
 }

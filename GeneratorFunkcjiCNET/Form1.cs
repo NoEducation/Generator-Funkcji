@@ -61,6 +61,7 @@ namespace GeneratorFunkcjiCNET
                     chartMain.Titles.Clear();
                     chartMain.Titles.Add("Sygnał pikokształtny");
                     break;
+               
             }
             UpdateChart();
         }
