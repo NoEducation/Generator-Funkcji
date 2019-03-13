@@ -91,6 +91,7 @@ namespace GeneratorFunkcjiCNET
                     textBoxResolutionPattern.Text = "8192";
                     currentSignal.ResolutionPattern = 8192;
                 }
+                
             }
             catch(FormatException ex)
             {
@@ -108,10 +109,13 @@ namespace GeneratorFunkcjiCNET
         private void buttonSaveData_Click(object sender, EventArgs e)
         {
             var csv = new StringBuilder();
-            foreach(var point in currentSignal.SignalValues)
-            {
-                csv.AppendLine(point.ToString());
-            }
+            if(currentSignal.TypeSignal == TypeSignal.LFM)
+                for(int i=0;i < currentSignal.ResolutionPattern/ Signal._resolutionPatternLFM; i++)
+                    csv.AppendLine(currentSignal.SignalValues[i].ToString());
+            else
+                foreach(var point in currentSignal.SignalValues)
+                    csv.AppendLine(point.ToString());
+           
 
 
             saveFileDialogCSV.Filter = "CSV file(*.csv) | *.csv | All files(*.*) | *.* ";
@@ -122,6 +126,17 @@ namespace GeneratorFunkcjiCNET
                 MessageBox.Show($"Zapisano wartości sygnału do pliku",
                     "Zapisano Plik", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void comboBoxSignalType_DropDownClosed(object sender, EventArgs e)
+        {
+            if ((TypeSignal)comboBoxSignalType.SelectedIndex == TypeSignal.LFM)
+            {
+                textBoxLengthSignal.Enabled = false;
+                textBoxLengthSignal.Text = "1";
+            }
+            else
+                textBoxLengthSignal.Enabled = true;
         }
     }
 }

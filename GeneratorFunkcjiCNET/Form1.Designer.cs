@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartMain = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.buttonGenerate = new System.Windows.Forms.Button();
             this.groupBoxEnterValues = new System.Windows.Forms.GroupBox();
@@ -58,23 +58,23 @@
             this.chartMain.BorderSkin.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center;
             this.chartMain.BorderSkin.BackSecondaryColor = System.Drawing.Color.Lime;
             this.chartMain.BorderSkin.PageColor = System.Drawing.Color.LightSeaGreen;
-            chartArea3.Name = "ChartArea1";
-            this.chartMain.ChartAreas.Add(chartArea3);
+            chartArea4.Name = "ChartArea1";
+            this.chartMain.ChartAreas.Add(chartArea4);
             this.chartMain.Cursor = System.Windows.Forms.Cursors.Cross;
             this.chartMain.ImeMode = System.Windows.Forms.ImeMode.On;
-            legend3.Name = "Legend1";
-            this.chartMain.Legends.Add(legend3);
+            legend4.Name = "Legend1";
+            this.chartMain.Legends.Add(legend4);
             this.chartMain.Location = new System.Drawing.Point(12, 12);
             this.chartMain.Name = "chartMain";
             this.chartMain.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             this.chartMain.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            series3.BorderColor = System.Drawing.Color.Blue;
-            series3.BorderWidth = 2;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Legend = "Legend1";
-            series3.Name = "Punkty";
-            this.chartMain.Series.Add(series3);
+            series4.BorderColor = System.Drawing.Color.Blue;
+            series4.BorderWidth = 2;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Legend = "Legend1";
+            series4.Name = "Punkty";
+            this.chartMain.Series.Add(series4);
             this.chartMain.Size = new System.Drawing.Size(534, 368);
             this.chartMain.TabIndex = 0;
             this.chartMain.Text = "chartMain";
@@ -130,6 +130,7 @@
             this.comboBoxSignalType.Name = "comboBoxSignalType";
             this.comboBoxSignalType.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSignalType.TabIndex = 4;
+            this.comboBoxSignalType.DropDownClosed += new System.EventHandler(this.comboBoxSignalType_DropDownClosed);
             // 
             // textBoxLengthSignal
             // 
