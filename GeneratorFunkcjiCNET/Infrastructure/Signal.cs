@@ -14,8 +14,8 @@ namespace GeneratorFunkcjiCNET.Infrastructure
 
         public double[] SignalValues;
 
-        public double _kwant { get { return LenghtSignal * 2 * 3.14159 / ResolutionPattern; } private set { } } 
-
+        public double _kwant { get { return LenghtSignal * 2 * 3.14159 / ResolutionPattern; } private set { } }
+        public static byte _resolutionPatternLFM { get { return 4; } private set { } }
         public Signal()
         {
             ResolutionPattern = 8192;

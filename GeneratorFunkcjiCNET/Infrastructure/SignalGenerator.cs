@@ -93,5 +93,22 @@ namespace GeneratorFunkcjiCNET.Infrastructure
                 target.SignalValues[i] = Math.Tan(target._kwant * i);
             }
         }
+        public static void GeneratingSignalLFM(this Signal target)
+        {
+            int p = 0;
+            double[] signalSinus = new double[target.ResolutionPattern];
+            target.SignalValues = (double[])Array.CreateInstance(typeof(double), target.ResolutionPattern);
+            for(int i=0; i < target.ResolutionPattern; i++)
+            {
+                signalSinus[i] = Math.Sin(target._kwant * i);
+            }
+            for(int i =0;i< target.ResolutionPattern/Signal._resolutionPatternLFM; i++)
+            {
+                p += i;
+                target.SignalValues[i] = signalSinus[p % target.ResolutionPattern];
+            }
+
+        }
+      
     }
 }

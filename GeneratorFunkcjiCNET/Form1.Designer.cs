@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartMain = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.buttonGenerate = new System.Windows.Forms.Button();
             this.groupBoxEnterValues = new System.Windows.Forms.GroupBox();
@@ -40,6 +40,8 @@
             this.labelLengthSignal = new System.Windows.Forms.Label();
             this.labelResolutionPattern = new System.Windows.Forms.Label();
             this.textBoxResolutionPattern = new System.Windows.Forms.TextBox();
+            this.saveFileDialogCSV = new System.Windows.Forms.SaveFileDialog();
+            this.buttonSaveData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chartMain)).BeginInit();
             this.groupBoxEnterValues.SuspendLayout();
             this.SuspendLayout();
@@ -56,35 +58,37 @@
             this.chartMain.BorderSkin.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center;
             this.chartMain.BorderSkin.BackSecondaryColor = System.Drawing.Color.Lime;
             this.chartMain.BorderSkin.PageColor = System.Drawing.Color.LightSeaGreen;
-            chartArea1.Name = "ChartArea1";
-            this.chartMain.ChartAreas.Add(chartArea1);
+            chartArea3.Name = "ChartArea1";
+            this.chartMain.ChartAreas.Add(chartArea3);
             this.chartMain.Cursor = System.Windows.Forms.Cursors.Cross;
             this.chartMain.ImeMode = System.Windows.Forms.ImeMode.On;
-            legend1.Name = "Legend1";
-            this.chartMain.Legends.Add(legend1);
+            legend3.Name = "Legend1";
+            this.chartMain.Legends.Add(legend3);
             this.chartMain.Location = new System.Drawing.Point(12, 12);
             this.chartMain.Name = "chartMain";
             this.chartMain.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             this.chartMain.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            series1.BorderColor = System.Drawing.Color.Blue;
-            series1.BorderWidth = 2;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Punkty";
-            this.chartMain.Series.Add(series1);
+            series3.BorderColor = System.Drawing.Color.Blue;
+            series3.BorderWidth = 2;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Legend = "Legend1";
+            series3.Name = "Punkty";
+            this.chartMain.Series.Add(series3);
             this.chartMain.Size = new System.Drawing.Size(534, 368);
             this.chartMain.TabIndex = 0;
             this.chartMain.Text = "chartMain";
             // 
             // buttonGenerate
             // 
-            this.buttonGenerate.Location = new System.Drawing.Point(577, 210);
+            this.buttonGenerate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.buttonGenerate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGenerate.Location = new System.Drawing.Point(577, 188);
             this.buttonGenerate.Name = "buttonGenerate";
             this.buttonGenerate.Size = new System.Drawing.Size(211, 71);
             this.buttonGenerate.TabIndex = 1;
             this.buttonGenerate.Text = "Generuj Sygnal";
-            this.buttonGenerate.UseVisualStyleBackColor = true;
+            this.buttonGenerate.UseVisualStyleBackColor = false;
             this.buttonGenerate.Click += new System.EventHandler(this.buttonSinus_Click);
             // 
             // groupBoxEnterValues
@@ -116,11 +120,12 @@
             this.comboBoxSignalType.DisplayMember = "1";
             this.comboBoxSignalType.FormattingEnabled = true;
             this.comboBoxSignalType.Items.AddRange(new object[] {
-            "Sinus",
-            "Cosinus",
-            "Kwadrat",
-            "Trójkat",
-            "Pikokształtny"});
+            "Sinusoidalny",
+            "Cosinusoidalny",
+            "Prostokątny",
+            "Trójkątny",
+            "Pikokształtny",
+            "LFM"});
             this.comboBoxSignalType.Location = new System.Drawing.Point(6, 108);
             this.comboBoxSignalType.Name = "comboBoxSignalType";
             this.comboBoxSignalType.Size = new System.Drawing.Size(121, 21);
@@ -158,14 +163,30 @@
             this.textBoxResolutionPattern.Size = new System.Drawing.Size(100, 20);
             this.textBoxResolutionPattern.TabIndex = 0;
             // 
+            // buttonSaveData
+            // 
+            this.buttonSaveData.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.buttonSaveData.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSaveData.Location = new System.Drawing.Point(577, 309);
+            this.buttonSaveData.Name = "buttonSaveData";
+            this.buttonSaveData.Size = new System.Drawing.Size(211, 71);
+            this.buttonSaveData.TabIndex = 3;
+            this.buttonSaveData.Text = "Zapisz do pliku";
+            this.buttonSaveData.UseVisualStyleBackColor = false;
+            this.buttonSaveData.Click += new System.EventHandler(this.buttonSaveData_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonSaveData);
             this.Controls.Add(this.groupBoxEnterValues);
             this.Controls.Add(this.buttonGenerate);
             this.Controls.Add(this.chartMain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Generator Funkcji";
             ((System.ComponentModel.ISupportInitialize)(this.chartMain)).EndInit();
@@ -186,6 +207,8 @@
         private System.Windows.Forms.TextBox textBoxLengthSignal;
         private System.Windows.Forms.ComboBox comboBoxSignalType;
         private System.Windows.Forms.Label labelSignalType;
+        private System.Windows.Forms.SaveFileDialog saveFileDialogCSV;
+        private System.Windows.Forms.Button buttonSaveData;
     }
 }
 
